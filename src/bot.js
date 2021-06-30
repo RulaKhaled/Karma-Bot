@@ -20,19 +20,19 @@ client.on('message', msg => {
     if (msg.content.startsWith(KARMA_PREFIX)) {
         getKarmaPoints(msg.author.id).then(res => {
             let encourage;
-            if (res.karmaPoints < 100) {
+            if (res < 100) {
                 encourage = "can't wait for the first 💯 "
-            } else if (res.karmaPoints >= 100 && res.karmaPoints < 500) {
+            } else if (res >= 100 && res < 500) {
                 encourage = "nice! I'm waiting for the 500 👏 "
             } else {
                 encourage = " AMAZING 😎 "
             }
-            msg.reply(`You have ${res.karmaPoints} karma points, ${encourage}`)
+            msg.reply(`You have ${res} karma points, ${encourage}`)
         }).catch(err => {
             console.error("error getting karma points", err)
         })
     }
-   
+
     const reaction = msg.content.split(" ")[0];
     if (karmaEmojis.has(reaction)) {
         if (msg.content.split(" for ").length !== 2) return;
