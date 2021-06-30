@@ -1,59 +1,25 @@
-const { saveArt, userGetAll, deleteArt, updateKarma, getKarmaPoints } = require('./firebase/firebase.utils');
+const { updateKarma, getKarmaPoints } = require('./firebase/firebase.utils');
 require('dotenv').config();
 
-const { Client, MessageAttachment, MessageReaction } = require('discord.js');
+const { Client } = require('discord.js');
 const client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-const ALL_PREFIX = '[ALL]'
-const DELETE_PREFIX = '[DELETE]'
 const KARMA_PREFIX = '!karma'
 const BOT_ID = '858477015066083348'
+const karmaEmojis = new Map([
+    ["⭐", 1],
+    ["🌟", 5],
+    ["🤩", 15],
+    ["🏆", 25]
+]);
 
 client.on("ready", () => {
     console.log(`Welcome ${client.user.tag}!`)
 });
 
 client.on('message', msg => {
-    const authorId = msg.author.id;
-    // if (msg.attachments.toJSON().length && !msg.author.bot) {
-    //     msg.attachments.forEach(attachment => {
-    //         const { name, id, url } = attachment;
-    //         saveArt(authorId, { name, id, url }).then(res => {
-    //             msg.member.send(`if you want to delete this art, make sure to write [DELETE] ${id} in the art channel`, attachment)
-    //         }).catch(err => {
-    //             console.error(err);
-    //         })
-    //     })
-    //     msg.reply("your art was uploaded successfully");
-    // }
-
-    // if (msg.content.startsWith(ALL_PREFIX)) {
-    //     msg.reply(`hey ${msg.author.tag}! here's your arts!`)
-    //     userGetAll(authorId).then(res => {
-    //         let docs = res.docs;
-    //         docs.forEach(doc => {
-    //             let { name, url, authorId, id } = doc.data();
-    //             let attachment = new MessageAttachment(url);
-    //             msg.reply(attachment)
-    //         })
-    //     }).catch(err => {
-    //         console.error(err)
-    //     })
-    // }
-
-    // if (msg.content.startsWith(DELETE_PREFIX)) {
-    //     const authorID = msg.author.id;
-    //     const artId = msg.content.split(" ")[1];
-    //     deleteArt(authorID, artId).then(res => {
-    //         msg.member.send(res);
-    //     }).catch(err => {
-    //         console.error(err, "problem deleting the art");
-    //     })
-    // }
-
-    //HERE .1
     if (msg.content.startsWith(KARMA_PREFIX)) {
         getKarmaPoints(msg.author.id).then(res => {
-            let encourage, winner;
+            let encourage;
             if (res.karmaPoints < 100) {
                 encourage = "can't wait for the first 💯 "
             } else if (res.karmaPoints >= 100 && res.karmaPoints < 500) {
@@ -61,15 +27,12 @@ client.on('message', msg => {
             } else {
                 encourage = " AMAZING 😎 "
             }
-            if (res.rank === 1) {
-                winner = ", I think we have a WINNER!"
-            }
-            msg.reply(`You have ${res.karmaPoints} karma points, ${encourage} \n\n Your current rank is: #${res.rank}${winner ? winner : ""} 💃`)
+            msg.reply(`You have ${res.karmaPoints} karma points, ${encourage}`)
         }).catch(err => {
             console.error("error getting karma points", err)
         })
     }
-    //.2
+   
     const reaction = msg.content.split(" ")[0];
     if (karmaEmojis.has(reaction)) {
         if (msg.content.split(" for ").length !== 2) return;
@@ -101,15 +64,6 @@ const checkMods = (member) => {
     });
     return flag;
 }
-
-
-//HERE .3
-const karmaEmojis = new Map([
-    ["⭐", 1],
-    ["🌟", 5],
-    ["🤩", 15],
-    ["🏆", 25]
-]);
 
 const handleReactionMessage = (reaction, user) => {
     const reactionName = reaction.emoji.name;
