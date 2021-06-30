@@ -23,7 +23,7 @@ const updateKarma = async (user, points) => {
     if (!snapShot.exists) {
         points = points >= 0 ? points : 0;
         ref.set({ ...data, karma: points, username: username }).then(res => {
-            console.log("karma points were intilized");
+            console.log("karma points were initialized");
         }).catch(err => {
             console.error(err)
         })

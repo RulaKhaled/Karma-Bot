@@ -13,7 +13,7 @@ const karmaEmojis = new Map([
 ]);
 
 client.on("ready", () => {
-    console.log(`Welcome ${client.user.tag}!`)
+    console.log(`Welcome ${client.user.tag}`)
 });
 
 client.on('message', msg => {
@@ -53,7 +53,7 @@ client.on('message', msg => {
 });
 
 const checkMods = (member) => {
-    const allowedRoles = ["Guards [Mods]", "The NPCs (dev team)", "guards"];
+    const allowedRoles = ["Guards [Mods]", "The NPCs (dev team)"];
     const memberRoles = member.roles.cache.toJSON();
     let flag = false;
     memberRoles.forEach(role => {
