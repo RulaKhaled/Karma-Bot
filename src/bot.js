@@ -27,7 +27,7 @@ client.on('message', msg => {
             } else {
                 encourage = " AMAZING 😎 "
             }
-            msg.reply(`You have ${res} karma points, ${encourage}`)
+            msg.reply(`**You have ${res} karma points**, _${encourage}_`)
         }).catch(err => {
             console.error("error getting karma points", err)
         })
@@ -37,12 +37,12 @@ client.on('message', msg => {
     if (karmaEmojis.has(reaction)) {
         if (msg.content.split(" for ").length !== 2) return;
         const member = msg.member;
-        const forMember = msg.mentions.members.first();
-        if (forMember && BOT_ID !== forMember.id && (forMember.id !== member.id)) {
+        const postAuthor = msg.mentions.members.first();
+        if (postAuthor && BOT_ID !== postAuthor.id && (postAuthor.id !== member.id)) {
             let flag = checkMods(member);
             if (flag || reaction == "⭐") {
                 points = karmaEmojis.get(reaction);
-                updateKarma(forMember.user, points).then(res => {
+                updateKarma(postAuthor.user, points).then(res => {
                     console.log(res);
                 }).catch(err => {
                     console.error(err);
@@ -75,8 +75,7 @@ const handleReactionMessage = (reaction, user) => {
 client.on('messageReactionAdd', async (reaction, user) => {
     const reactionMsg = await reaction.fetch();
     const author = reactionMsg.message.author;
-    if (author.bot) return;
-    if (user.id === author.id) return;
+    if (user.id === author.id || author.bot) return;
     const { reactionName, flag } = handleReactionMessage(reaction, user);
 
     let points;
@@ -93,8 +92,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 client.on("messageReactionRemove", async (reaction, user) => {
     const reactionMsg = await reaction.fetch();
     const author = reactionMsg.message.author;
-    if (author.bot) return;
-    if (user.id === author.id) return;
+    if (user.id === author.id || author.bot) return;
     const { reactionName, flag } = handleReactionMessage(reaction, user);
 
     let points;
