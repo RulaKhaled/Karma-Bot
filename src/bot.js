@@ -13,7 +13,7 @@ const karmaEmojis = new Map([
 ]);
 
 client.on("ready", () => {
-    console.log(`Welcome ${client.user.tag}`)
+    console.log(`Welcome ${client.user.tag}`);
 });
 
 client.on('message', msg => {
