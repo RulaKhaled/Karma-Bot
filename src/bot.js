@@ -1,6 +1,5 @@
 const { updateKarma, getKarmaPoints } = require('./firebase/firebase.utils');
 require('dotenv').config();
-
 //this is fform the test1
 //this is from test2
 //last third test 
