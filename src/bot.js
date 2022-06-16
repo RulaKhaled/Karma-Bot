@@ -1,6 +1,7 @@
 const { updateKarma, getKarmaPoints } = require('./firebase/firebase.utils');
 require('dotenv').config();
 
+
 const { Client } = require('discord.js');
 const client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 const KARMA_PREFIX = '!karma';
