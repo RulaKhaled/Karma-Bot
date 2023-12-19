@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest /test-codecov/codecov.test.js",
     "start": "node src/bot.js",
     "dev": "nodemon src/bot.js"
   },
@@ -12,8 +12,12 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
-    "firebase": "^8.6.8"
+    "firebase": "^8.6.8",
+    "jest": "^29.7.0"
   },
-  "devDependencies": {},
-  "description": ""
+  "description": "",
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage/"
+  }
 }
