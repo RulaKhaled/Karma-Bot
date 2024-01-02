@@ -11,4 +11,8 @@ function reverse(array) {
   return array.reverse();
 }
 
-module.exports = { randomTest, returnPlus3, reverse };
+function hello(a) {
+  return a === 5 ? "hello!" : "nope";
+}
+
+module.exports = { randomTest, returnPlus3, reverse, hello };
