@@ -1,4 +1,4 @@
-const { reverse, randomTest, returnPlus3 } = require("./test-branch");
+const { reverse, randomTest, returnPlus3, hello } = require("./test-branch");
 
 test("returns the given array reversed", function () {
   expect(reverse([1, 2, 3])).toEqual([3, 2, 1]);
@@ -14,4 +14,8 @@ test("random test", function () {
 
 test("returns 9 when given 6", () => {
   expect(returnPlus3(6)).toBe(9);
+});
+
+test("returns 'hello!' if given 5", function () {
+  expect(hello(5)).toBe("hello!");
 });
