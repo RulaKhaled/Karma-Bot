@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1704201289200" clover="3.2.0">
-  <project timestamp="1704201289200" name="All files">
-    <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3" elements="7" coveredelements="7" complexity="0" loc="4" ncloc="4" packages="1" files="1" classes="1"/>
+<coverage generated="1704204359166" clover="3.2.0">
+  <project timestamp="1704204359166" name="All files">
+    <metrics statements="13" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="9" elements="25" coveredelements="23" complexity="0" loc="13" ncloc="13" packages="1" files="3" classes="3"/>
+    <file name="codecov-all-tests.js" path="/Users/rula/Desktop/Karma-Bot/src/test-codecov/codecov-all-tests.js">
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+    </file>
+    <file name="codecov.js" path="/Users/rula/Desktop/Karma-Bot/src/test-codecov/codecov.js">
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="13" count="1" type="stmt"/>
+    </file>
     <file name="test-branch.js" path="/Users/rula/Desktop/Karma-Bot/src/test-codecov/test-branch.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <line num="3" count="1" type="stmt"/>
