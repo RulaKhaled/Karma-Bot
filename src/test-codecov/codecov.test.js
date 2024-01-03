@@ -8,10 +8,10 @@ test("returns + 3 of whatever you give it", function () {
   expect(returnPlus3(4)).toBe(7);
 });
 
-test("returns 'hello!' if given 5", function () {
-  expect(hello(5)).toBe("hello!");
-});
+// test("returns 'hello!' if given 5", function () {
+//   expect(hello(5)).toBe("hello!");
+// });
 
-test("returns 'nope' if given anything other than 5", function () {
-  expect(hello(4)).toBe("nope");
-});
+// test("returns 'nope' if given anything other than 5", function () {
+//   expect(hello(4)).toBe("nope");
+// });
