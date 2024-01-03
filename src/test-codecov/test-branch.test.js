@@ -16,9 +16,9 @@ test("returns 9 when given 6", () => {
   expect(returnPlus3(6)).toBe(9);
 });
 
-test("returns 'hello!' if given 5", function () {
-  expect(hello(5)).toBe("hello!");
-});
+// test("returns 'hello!' if given 5", function () {
+//   expect(hello(5)).toBe("hello!");
+// });
 
 // test("returns 'nope' if given anything other than 5", function () {
 //   expect(hello(4)).toBe("nope");
