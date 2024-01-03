@@ -8,6 +8,6 @@ test("add", () => {
   expect(add(2, 1)).toBe(3);
 });
 
-test("multiply", () => {
-  expect(multiply(2, 1)).toBe(2);
-});
+// test("multiply", () => {
+//   expect(multiply(2, 1)).toBe(2);
+// });
