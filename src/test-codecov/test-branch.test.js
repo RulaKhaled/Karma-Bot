@@ -20,10 +20,10 @@ test("returns 'hello!' if given 5", function () {
   expect(hello(5)).toBe("hello!");
 });
 
-test("returns 'nope' if given anything other than 5", function () {
-  expect(hello(4)).toBe("nope");
-});
+// test("returns 'nope' if given anything other than 5", function () {
+//   expect(hello(4)).toBe("nope");
+// });
 
 test("returns 'nope'", function () {
   expect(hello(9)).toBe("nope");
-})
+});
