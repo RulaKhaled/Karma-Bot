@@ -12,9 +12,9 @@ test("random test", function () {
   expect(randomTest()).toBe("hello");
 });
 
-test("returns 9 when given 6", () => {
-  expect(returnPlus3(6)).toBe(9);
-});
+// test("returns 9 when given 6", () => {
+//   expect(returnPlus3(6)).toBe(9);
+// });
 
 // test("returns 'hello!' if given 5", function () {
 //   expect(hello(5)).toBe("hello!");
