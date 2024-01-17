@@ -17,3 +17,7 @@ component_management:
       name: codecov-component # this is a display name, and can be changed freely
       paths:
         - src/test-codecov/**
+    - component_id: test-codecov2 # this is an identifier that should not be changed
+      name: codecov-component2 # this is a display name, and can be changed freely
+      paths:
+        - src/firebase/**
