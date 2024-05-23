@@ -9,7 +9,7 @@ test("returns + 3 of whatever you give it", function () {
 });
 
 test("random test", function () {
-  expect(randomTest()).toBe("hello");
+  expect(randomTest()).toBe("helloooooo!");
 });
 
 // test("returns 9 when given 6", () => {
