@@ -1,8 +1,6 @@
 const { updateKarma, getKarmaPoints } = require('./firebase/firebase.utils');
 require('dotenv').config();
-//this is fform the test1
-//this is from test8
-//last third test 
+
 const { Client } = require('discord.js');
 const client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 const KARMA_PREFIX = '!karma';
@@ -54,10 +52,11 @@ client.on('message', msg => {
     }
 });
 
+let flag = false;
 const checkMods = (member) => {
     const allowedRoles = ["Guards [Mods]", "The NPCs (dev team)"];
     const memberRoles = member.roles.cache.toJSON();
-    let flag = false;
+    
     memberRoles.forEach(role => {
         if (allowedRoles.includes(role.name)) {
             flag = true;
