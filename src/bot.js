@@ -1,7 +1,7 @@
 const { updateKarma, getKarmaPoints } = require('./firebase/firebase.utils');
 require('dotenv').config();
 //this is fform the test1
-//this is from test2
+//this is from test8
 //last third test 
 const { Client } = require('discord.js');
 const client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
