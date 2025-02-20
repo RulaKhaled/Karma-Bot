@@ -14,7 +14,7 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
-    "firebase": "^8.6.8"
+    "firebase": "^11.3.1"
   },
   "description": "",
   "jest": {
