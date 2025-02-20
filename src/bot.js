@@ -14,6 +14,8 @@ const karmaEmojis = new Map([
     ["🏆", 25]
 ]);
 
+
+
 client.on("ready", () => {
     console.log(`Welcome ${client.user.tag}`);
 });
