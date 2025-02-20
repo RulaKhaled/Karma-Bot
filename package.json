@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/bot.js",
   "scripts": {
-    "test-1": "jest /test-codecov/codecov.test.js",
+    "test": "jest /test-codecov/codecov.test.js",
     "test-all": "jest /test-codecov/codecov-all-tests.test.js",
     "test-branch": "jest /test-codecov/test-branch.test.js",
     "start": "node src/bot.js",
