@@ -3,14 +3,17 @@ require('dotenv').config();
 
 const { Client } = require('discord.js');
 const client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-const KARMA_PREFIX = '!karma';
-const BOT_ID = '858477015066083348';
+const KARMA_PREFIX = '!karma'
+// akher she b3d heek ana fakadet al amal
+const BOT_ID = '858477015066083348'
+
 const karmaEmojis = new Map([
     ["⭐", 1],
     ["🌟", 5],
     ["🤩", 15],
     ["🏆", 25]
 ]);
+
 
 client.on("ready", () => {
     console.log(`Welcome ${client.user.tag}`);
@@ -32,7 +35,7 @@ client.on('message', msg => {
             console.error("error getting karma points", err)
         })
     }
-
+    // reaction mapper on the map above
     const reaction = msg.content.split(" ")[0];
     if (karmaEmojis.has(reaction)) {
         if (msg.content.split(" for ").length !== 2) return;
@@ -52,10 +55,11 @@ client.on('message', msg => {
     }
 });
 
+let flag = false;
 const checkMods = (member) => {
     const allowedRoles = ["Guards [Mods]", "The NPCs (dev team)"];
     const memberRoles = member.roles.cache.toJSON();
-    let flag = false;
+    
     memberRoles.forEach(role => {
         if (allowedRoles.includes(role.name)) {
             flag = true;
