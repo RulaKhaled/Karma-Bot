@@ -32,3 +32,4 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: RulaKhaled/Karma-Bot
+          files: ./coverage/lcov.info
