@@ -28,6 +28,6 @@ jobs:
     needs: build
     steps:
       - name: Upload coverage reports to Codecov
-        run: npx codecov --verbose --token ${{ secrets.CODECOV_TOKEN }} --slug RulaKhaled/Karma-Bot --files coverage/lcov.info --verbose
+        run: npx codecov --token ${{ secrets.CODECOV_TOKEN }} --slug RulaKhaled/Karma-Bot --files coverage/lcov.info --verbose
 
           
