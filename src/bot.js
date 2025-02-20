@@ -32,7 +32,7 @@ client.on('message', msg => {
             console.error("error getting karma points", err)
         })
     }
-
+    // reaction mapper on the map above
     const reaction = msg.content.split(" ")[0];
     if (karmaEmojis.has(reaction)) {
         if (msg.content.split(" for ").length !== 2) return;
