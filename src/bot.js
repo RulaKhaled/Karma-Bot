@@ -3,8 +3,9 @@ require('dotenv').config();
 
 const { Client } = require('discord.js');
 const client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-const KARMA_PREFIX = '!karma';
-const BOT_ID = '858477015066083348';
+const KARMA_PREFIX = '!karma'
+const BOT_ID = '858477015066083348'
+
 const karmaEmojis = new Map([
     ["⭐", 1],
     ["🌟", 5],
