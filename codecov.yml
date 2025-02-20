@@ -1,14 +1,8 @@
-codecov:
-  disable_search: true
-  notify:
-    require_ci_to_pass: yes
 coverage:
   status:
-    project:
+    project: #add everything under here, more options at https://docs.codecov.com/docs/commit-status
       default:
-        target: auto
-  parsers:
-    gcov:
-      enable: no
-    pycoverage:
-      enable: no
+        # basic
+        target: auto #default
+        threshold: 0%
+        base: auto 
