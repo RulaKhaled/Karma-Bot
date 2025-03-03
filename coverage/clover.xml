@@ -8,6 +8,7 @@
       <line num="6" count="1" type="stmt"/>
       <line num="10" count="0" type="stmt"/>
       <line num="14" count="0" type="stmt"/>
+      
       <line num="17" count="1" type="stmt"/>
     </file>
     <file name="codecov.js" path="/Users/rula/Desktop/Karma-Bot/src/test-codecov/codecov.js">
