@@ -8,6 +8,8 @@ test("returns + 3 of whatever you give it", function () {
   expect(returnPlus3(4)).toBe(7);
 });
 
+// is this a good comment? bot?
+
 test("random test", function () {
   expect(randomTest()).toBe("helloooooo!");
 });
