@@ -14,10 +14,15 @@ const karmaEmojis = new Map([
     ["🏆", 25]
 ]);
 
+if client is None:
+    return
+
 
 client.on("ready", () => {
     console.log(`Welcome ${client.user.tag}`);
 });
+
+
 
 client.on('message', msg => {
     if (msg.content.startsWith(KARMA_PREFIX)) {
