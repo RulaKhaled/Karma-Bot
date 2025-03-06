@@ -6,6 +6,20 @@ function reverse(array) {
   return array.reverse();
 }
 
+function hello_2(a) {
+  return a === 5 ? "hello!" : "nope";
+}
+
+
+function hello_2(a) {
+  return a === 5 ? "hello!" : "nope";
+}
+
+
+function goodbye_(a) {
+  return a === 9 ? "hello!" : "nope";
+}
+
 function hello(a) {
   return a === 5 ? "hello!" : "nope";
 }
