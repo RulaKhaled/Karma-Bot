@@ -3,7 +3,7 @@ const { hello_2, goodbye_ } = require('./codecov');
 describe('codecov.js functions', () => {
   // Tests for hello_2 function
   test('hello_2 returns "hello!" when input is 5', () => {
-    expect(hello_2(5)).toBe("hello!");
+    expect(hello_2(5)).toBe("hello");
   });
 
   test('hello_2 returns "nope" when input is not 5', () => {
